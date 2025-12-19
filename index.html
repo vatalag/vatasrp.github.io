@@ -64,10 +64,10 @@
     </div>
     <script>
   function openExternal(url) {
-    if (typeof gmod !== "undefined" && gmod.openURL) {
-      gmod.openURL(url);
+    if (typeof gmod !== "undefined" && (gmod.openURL || gmod.openUrl)) {
+      (gmod.openURL || gmod.openUrl)(url);
     } else {
-      window.open(url, "_blank");
+      window.location.href = url; // fallback
     }
   }
 
@@ -75,6 +75,5 @@
     window.location.href = path;
   }
 </script>
-
 </body>
 </html>
