@@ -62,5 +62,19 @@
   <button class="btn" onclick="openExternal('https://link.mercadopago.com.ar/vatasrp')">💸 Donaciones</button>
 </div>
     </div>
+    <script>
+  function openExternal(url) {
+    if (typeof gmod !== "undefined" && gmod.openURL) {
+      gmod.openURL(url);
+    } else {
+      window.open(url, "_blank");
+    }
+  }
+
+  function openLink(path) {
+    window.location.href = path;
+  }
+</script>
+
 </body>
 </html>
