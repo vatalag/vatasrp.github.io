@@ -1,80 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Vata's RP</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #0f1115, #141822);
-            color: white;
-        }
-        .container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px;
-        }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-        p {
-            max-width: 700px;
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        .buttons {
-            margin-top: 30px;
-        }
-        .btn {
-            display: inline-block;
-            margin: 10px;
-            padding: 14px 26px;
-            border-radius: 30px;
-            background: rgba(255,255,255,0.15);
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-        .btn:hover {
-            background: rgba(255,255,255,0.3);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Bienvenido a Vata’s RP</h1>
-        <p>
-            Servidor DarkRP enfocado en rol serio, progresión, sistemas personalizados
-            y una experiencia justa para todos.
-        </p>
+  <meta charset="UTF-8">
+  <title>Vata's RP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <div class="buttons">
-  <button class="btn" onclick="openLink('reglas.html')">📜 Reglas</button>
-  <button class="btn" onclick="openExternal('https://discord.gg/mGbqpJTMuX')">💬 Discord</button>
-  <button class="btn" onclick="openLink('vip.html')">⭐ Beneficios VIP</button>
-  <button class="btn" onclick="openLink('donaciones.html')">💸 Donaciones</button>
-</div>
-    </div>
-    <script>
-  function openExternal(url) {
-    if (typeof gmod !== "undefined" && (gmod.openURL || gmod.openUrl)) {
-      (gmod.openURL || gmod.openUrl)(url);
-    } else {
-      window.location.href = url; // fallback
+  <style>
+    :root{
+      --bg1:#0f1115;
+      --bg2:#141822;
+
+      --text:#ffffff;
+      --muted: rgba(255,255,255,0.86);
+
+      --btn-bg: rgba(255,255,255,0.10);
+      --btn-bg-hover: rgba(255,255,255,0.16);
+      --btn-border: rgba(255,255,255,0.10);
+
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --shadow-soft: 0 8px 22px rgba(0,0,0,0.28);
+
+      --radius: 999px;
     }
-  }
 
-  function openLink(path) {
-    window.location.href = path;
-  }
-</script>
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .container{
+      min-height: 100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding: 40px;
+
+      /* Subimos un poco el bloque para que se vea mejor en MOTD */
+      transform: translateY(-55px);
+    }
+
+    h1{
+      font-size: 3em;
+      margin: 0 0 12px;
+      letter-spacing: 0.2px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+    }
+
+    p{
+      max-width: 720px;
+      font-size: 1.05em;            /* un toque más compacto */
+      line-height: 1.45;
+      margin: 0;
+      opacity: 1;
+      color: var(--muted);
+      text-shadow: 0 1px 10px rgba(0,0,0,0.35);
+    }
+
+    .buttons{
+      margin-top: 26px;
+      display:flex;
+      flex-wrap: wrap;
+      justify-content:center;
+      gap: 12px;                     /* más consistente que margin:10 */
+    }
+
+    .btn{
+      appearance: none;
+      border: 1px solid var(--btn-border);
+      background: var(--btn-bg);
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: 0.2px;
+
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      cursor: pointer;
+
+      box-shadow: var(--shadow-soft);
+      transition: transform .12s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+      user-select: none;
+    }
+
+    .btn:hover{
+      background: var(--btn-bg-hover);
+      border-color: rgba(255,255,255,0.18);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn:active{
+      transform: translateY(0px) scale(0.99);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.28);
+    }
+
+    /* Por si el MOTD queda angosto, que no se vea gigante */
+    @media (max-width: 720px){
+      h1{ font-size: 2.2em; }
+      p{ font-size: 0.98em; }
+      .container{ transform: translateY(-35px); }
+      .btn{ width: 100%; max-width: 360px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Bienvenido a Vata’s RP</h1>
+    <p>
+      Servidor DarkRP enfocado en rol serio, progresión, sistemas personalizados
+      y una experiencia justa para todos.
+    </p>
+
+    <div class="buttons">
+      <button class="btn" onclick="openLink('reglas.html')">📜 Reglas</button>
+      <button class="btn" onclick="openExternal('https://discord.gg/mGbqpJTMuX')">💬 Discord</button>
+      <button class="btn" onclick="openLink('vip.html')">⭐ Beneficios VIP</button>
+      <button class="btn" onclick="openLink('donaciones.html')">💸 Donaciones</button>
+    </div>
+  </div>
+
+  <script>
+    function openExternal(url) {
+      if (typeof gmod !== "undefined" && (gmod.openURL || gmod.openUrl)) {
+        (gmod.openURL || gmod.openUrl)(url);
+      } else {
+        window.location.href = url; // fallback
+      }
+    }
+
+    function openLink(path) {
+      window.location.href = path;
+    }
+  </script>
 </body>
 </html>
