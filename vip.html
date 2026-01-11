@@ -162,6 +162,16 @@
       font-size: 12px;
     }
   </style>
+
+  <script>
+    function openExternal(url) {
+      if (typeof gmod !== "undefined" && (gmod.openURL || gmod.openUrl)) {
+        (gmod.openURL || gmod.openUrl)(url);
+      } else {
+        window.location.href = url;
+      }
+    }
+  </script>
 </head>
 <body>
   <div class="wrap">
@@ -214,15 +224,16 @@
 
       <div class="note">
         <b>Importante:</b> VIP = QoL / estética / extras moderados. Nada pay-to-win.<br>
-        Para donar, en la nota indicá: <b>VIP (Plata/Oro/Plus) + SteamID + Nueva o Renovación</b>.
+        Para donar, usá el botón de abajo y seguí las instrucciones (VIP + SteamID).
       </div>
 
       <div class="actions">
         <button class="btn btn-primary" onclick="window.location.href='donaciones.html'">💸 Ir a Donaciones</button>
-        <button class="btn btn-ghost" onclick="history.back()">← Volver</button>
+        <button class="btn btn-ghost" onclick="openExternal('https://discord.gg/mGbqpJTMuX')">💬 Discord</button>
+        <button class="btn btn-ghost" onclick="window.location.href='index.html'">← Volver</button>
       </div>
 
-      <div class="footer">¿Dudas? Consultá a un staff en Discord. Entrega del VIP: hasta 24 hs.</div>
+      <div class="footer">Entrega del VIP: hasta 24 hs. ¿Dudas? Consultá a un staff en Discord.</div>
     </div>
   </div>
 </body>
