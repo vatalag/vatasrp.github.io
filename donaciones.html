@@ -60,6 +60,12 @@ p {
     margin-top: 12px;
 }
 
+.small-note {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 6px;
+}
+
 .buttons {
     display: flex;
     gap: 15px;
@@ -120,16 +126,20 @@ Al donar obtenés <b>VIP permanente</b> (pago único, sin mensualidades).
 </p>
 
 <div class="vip-box">
-    <p><b>VIP Plata</b> – $4.99 USD</p>
-    <p><b>VIP Oro</b> – $9.99 USD</p>
-    <p class="vip-plus"><b>VIP Plus</b> – $12.99 USD</p>
+    <p><b>VIP Plata</b> – $4.99 USD / $8.000 ARS</p>
+    <p><b>VIP Oro</b> – $9.99 USD / $15.600 ARS</p>
+    <p class="vip-plus"><b>VIP Plus</b> – $12.99 USD / $20.300 ARS</p>
 
     <p class="note">
         En la nota indicá:<br>
         VIP + SteamID + Nueva o Renovación
     </p>
 
-    <p class="note">
+    <p class="small-note">
+        MercadoPago acepta pagos en pesos argentinos (ARS).
+    </p>
+
+    <p class="small-note">
         La entrega del VIP puede demorar hasta 24 hs.
     </p>
 </div>
@@ -137,12 +147,12 @@ Al donar obtenés <b>VIP permanente</b> (pago único, sin mensualidades).
 <div class="buttons">
     <button class="btn paypal"
         onclick="openExternal('https://www.paypal.com/donate/?hosted_button_id=8NN2V6T2QKW2A')">
-        PayPal
+        PayPal (USD)
     </button>
 
     <button class="btn mercado"
         onclick="openExternal('https://link.mercadopago.com.ar/vatasrp')">
-        MercadoPago
+        MercadoPago (ARS)
     </button>
 </div>
 
