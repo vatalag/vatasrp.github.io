@@ -1,315 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Donaciones – Vata's RP</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Donaciones – Vata's RP</title>
 
-  <style>
-    :root{
-      --bg1:#0f1115;
-      --bg2:#141822;
-      --card: rgba(255,255,255,0.04);
-      --card2: rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.09);
-      --text:#e5e7eb;
-      --muted:#cbd5e1;
-      --muted2:#94a3b8;
-      --gold:#facc15;
-      --blue:#2563eb;
-      --green:#10b981;
-      --shadow: 0 18px 60px rgba(0,0,0,0.45);
-    }
+<style>
+  :root{
+    --bg1:#0f1115;
+    --bg2:#141822;
+    --card: rgba(255,255,255,0.05);
+    --border: rgba(255,255,255,0.08);
+    --text:#e5e7eb;
+    --muted:#94a3b8;
+    --accent:#facc15;
+    --blue:#2563eb;
+    --green:#10b981;
+  }
 
-    *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(1200px 800px at 50% 20%, rgba(255,255,255,0.06), transparent 60%),
+                linear-gradient(135deg, var(--bg1), var(--bg2));
+    color:var(--text);
+  }
 
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(1200px 800px at 50% 40%, rgba(255,255,255,0.06), rgba(0,0,0,0) 55%),
-                  linear-gradient(135deg, var(--bg1), var(--bg2));
-      color: var(--text);
-      min-height:100vh;
-    }
+  .wrap{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding: 70px 20px 60px;
+    box-sizing:border-box;
+  }
 
-    .wrap{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding: 32px 18px;
-    }
+  .container{
+    width: min(900px, 100%);
+    text-align:center;
+  }
 
-    .container{
-      width: min(980px, 100%);
-      text-align:center;
-    }
+  h1{
+    margin:0 0 8px;
+    font-size: 42px;
+  }
 
-    .title{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      margin-bottom: 8px;
-    }
+  .subtitle{
+    margin: 0 auto 18px;
+    max-width: 760px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.45;
+  }
 
-    .title h1{
-      margin:0;
-      font-size: 36px;
-      letter-spacing: 0.2px;
-    }
+  .panel{
+    margin: 18px auto 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 18px 18px;
+    text-align:left;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  }
 
-    .subtitle{
-      margin: 0 auto 18px auto;
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.45;
-      opacity: 0.95;
-    }
+  .important{
+    color: var(--accent);
+    font-weight: 900;
+  }
 
-    .noteBox{
-      width: min(920px, 100%);
-      margin: 16px auto 22px auto;
-      background: rgba(255,255,255,0.035);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px 16px;
-      text-align:left;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.25);
-    }
+  .prices{
+    margin-top: 10px;
+    display:grid;
+    gap: 8px;
+    font-size: 14px;
+    color:#d7dde7;
+  }
+  .prices b{ color: var(--accent); }
 
-    .noteBox b{ color: var(--gold); }
-    .noteBox .small{
-      color: var(--muted2);
-      font-size: 12.5px;
-      margin-top: 6px;
-      line-height: 1.35;
-    }
+  .small{
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.45;
+  }
 
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      width: min(920px, 100%);
-      margin: 0 auto;
-    }
+  .actions{
+    display:flex;
+    gap: 12px;
+    justify-content:center;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
 
-    .card{
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 18px 18px 16px 18px;
-      text-align:left;
-      box-shadow: var(--shadow);
-      position:relative;
-      overflow:hidden;
-    }
+  .btn{
+    border: none;
+    cursor:pointer;
+    font-weight: 900;
+    border-radius: 12px;
+    padding: 12px 16px;
+    transition: .18s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    min-width: 180px;
+  }
+  .btn:hover{ transform: translateY(-1px); opacity:.95; }
 
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.05);
-      color: var(--text);
-      margin-bottom: 10px;
-    }
+  .btn-paypal{ background: var(--blue); color: white; }
+  .btn-mp{ background: var(--green); color: #071014; }
 
-    .pill.gold{
-      border-color: rgba(250,204,21,0.35);
-      color: var(--gold);
-      background: rgba(250,204,21,0.06);
-    }
+  .btn-ghost{
+    background: rgba(255,255,255,0.10);
+    border: 1px solid var(--border);
+    color: var(--text);
+    min-width: 180px;
+  }
 
-    .card h2{
-      margin: 4px 0 10px 0;
-      font-size: 20px;
-      line-height: 1.15;
-    }
+  .footer{
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+</style>
 
-    .price{
-      margin: 0 0 8px 0;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .price b{ color: var(--text); }
-
-    .card ul{
-      margin: 10px 0 0 18px;
-      padding: 0;
-      color: var(--muted);
-      font-size: 13.5px;
-      line-height: 1.45;
-    }
-
-    .card li{ margin: 6px 0; }
-
-    .card .hint{
-      margin-top: 10px;
-      font-size: 12.5px;
-      color: var(--muted2);
-    }
-
-    .ctaRow{
-      display:flex;
-      gap: 12px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin: 18px auto 8px auto;
-      width: min(920px, 100%);
-    }
-
-    .btn{
-      border: none;
-      cursor: pointer;
-      font-weight: 800;
-      padding: 12px 18px;
-      border-radius: 12px;
-      transition: 0.18s;
-      font-size: 14px;
-      letter-spacing: 0.1px;
-    }
-
-    .btn:hover{ transform: translateY(-1px); opacity: 0.92; }
-
-    .btnGhost{
-      background: rgba(255,255,255,0.10);
-      color: var(--text);
-      border: 1px solid rgba(255,255,255,0.14);
-    }
-
-    .btnBlue{
-      background: var(--blue);
-      color: #fff;
-    }
-
-    .btnGreen{
-      background: var(--green);
-      color: #06110c;
-    }
-
-    .back{
-      margin-top: 10px;
-      color: var(--muted2);
-      font-size: 12.5px;
-      cursor:pointer;
-      display:inline-block;
-      padding: 8px 10px;
-      border-radius: 10px;
-    }
-    .back:hover{
-      background: rgba(255,255,255,0.06);
-    }
-
-    .footerNote{
-      margin-top: 10px;
-      color: var(--muted2);
-      font-size: 12.5px;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px){
-      .grid{ grid-template-columns: 1fr; }
-      .card{ text-align:left; }
-      .title h1{ font-size: 30px; }
-    }
-  </style>
-
-  <script>
-    function openExternal(url) {
-      if (typeof gmod !== "undefined" && (gmod.openURL || gmod.openUrl)) {
-        (gmod.openURL || gmod.openUrl)(url);
-      } else {
-        window.location.href = url;
-      }
-    }
-
-    function openLink(path) {
-      window.location.href = path;
-    }
-  </script>
+<script>
+function openExternal(url) {
+  if (typeof gmod !== "undefined" && (gmod.openURL || gmod.openUrl)) {
+    (gmod.openURL || gmod.openUrl)(url);
+  } else {
+    window.location.href = url;
+  }
+}
+</script>
 </head>
 
 <body>
   <div class="wrap">
     <div class="container">
 
-      <div class="title">
-        <div style="font-size:30px; line-height:1;">💸</div>
-        <h1>Donaciones</h1>
-      </div>
-
+      <h1>💸 Donaciones</h1>
       <p class="subtitle">
-        Las donaciones ayudan a mantener y mejorar el servidor (host + mejoras + addons).
+        Las donaciones ayudan a mantener y mejorar el servidor (host + mejoras + addons).<br>
         Al donar obtenés <b>VIP permanente</b> (pago único, sin mensualidades).
       </p>
 
-      <div class="noteBox">
-        <div><b>Importante:</b> en la nota indicá <b>VIP</b> + <b>SteamID</b> + <b>Nueva</b> o <b>Renovación</b>.</div>
+      <div class="panel">
+        <div><span class="important">Importante:</span> en la nota indicá <b>VIP + SteamID + Nueva o Renovación</b>.</div>
+        <div class="small">Ejemplo: “VIP Oro — STEAM_0:1:12345678 — Nueva compra”</div>
+
+        <div class="prices">
+          <div><b>VIP Plata</b> — USD $4.99 / ARS $8.000</div>
+          <div><b>VIP Oro</b> — USD $9.99 / ARS $15.600</div>
+          <div><b>VIP Plus</b> — USD $12.99 / ARS $20.300</div>
+        </div>
+
         <div class="small">
-          Ejemplo: “VIP Oro – STEAM_0:1:12345678 – Nueva”
-          <br>
-          MercadoPago acepta pagos en <b>ARS</b>. Entrega del VIP: hasta 24 hs.
+          MercadoPago acepta pagos en pesos argentinos (ARS).<br>
+          Entrega del VIP: hasta 24 hs.
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-paypal" onclick="openExternal('https://www.paypal.com/donate/?hosted_button_id=8NN2V6T2QKW2A')">
+            Donar con PayPal (USD)
+          </button>
+
+          <button class="btn btn-mp" onclick="openExternal('https://link.mercadopago.com.ar/vatasrp')">
+            Donar con MercadoPago (ARS)
+          </button>
+
+          <button class="btn btn-ghost" onclick="window.location.href='vip.html'">
+            ⭐ Ver Beneficios VIP
+          </button>
+
+          <button class="btn btn-ghost" onclick="history.back()">
+            ← Volver
+          </button>
         </div>
       </div>
 
-      <div class="grid">
-        <div class="card">
-          <div class="pill">VIP PLATA</div>
-          <h2>Entrada al VIP</h2>
-          <div class="price"><b>USD $4.99</b> / <b>ARS $8.000</b></div>
-          <ul>
-            <li>Ideal para apoyar y empezar</li>
-            <li>Beneficios QoL + status</li>
-            <li>Acceso a contenido VIP (según aplique)</li>
-          </ul>
-          <div class="hint">Pago único • VIP permanente</div>
-        </div>
-
-        <div class="card">
-          <div class="pill gold">VIP ORO</div>
-          <h2>Más opciones + comodidad</h2>
-          <div class="price"><b>USD $9.99</b> / <b>ARS $15.600</b></div>
-          <ul>
-            <li>Incluye todo lo de Plata</li>
-            <li>Extras VIP mejorados</li>
-            <li>Mejor prioridad (si hay queue)</li>
-          </ul>
-          <div class="hint">Pago único • VIP permanente</div>
-        </div>
-
-        <div class="card">
-          <div class="pill gold">VIP PLUS</div>
-          <h2>Pack completo</h2>
-          <div class="price"><b>USD $12.99</b> / <b>ARS $20.300</b></div>
-          <ul>
-            <li>Incluye todo lo de VIP Oro</li>
-            <li>Extras adicionales (QoL + estéticos)</li>
-            <li>Ideal si querés apoyar fuerte ❤️</li>
-          </ul>
-          <div class="hint">Pago único • VIP permanente</div>
-        </div>
-      </div>
-
-      <div class="ctaRow">
-        <button class="btn btnGhost" onclick="openLink('vip.html')">⭐ Ver Beneficios VIP</button>
-        <button class="btn btnBlue" onclick="openExternal('https://www.paypal.com/donate/?hosted_button_id=8NN2V6T2QKW2A')">Donar con PayPal (USD)</button>
-        <button class="btn btnGreen" onclick="openExternal('https://link.mercadopago.com.ar/vatasrp')">Donar con MercadoPago (ARS)</button>
-      </div>
-
-      <div class="footerNote">
-        ¿Dudas? Consultá a un staff en Discord.
-      </div>
-
-      <div class="back" onclick="history.back()">← Volver</div>
-
+      <div class="footer">Si tenés dudas, consultá a un staff en Discord.</div>
     </div>
   </div>
 </body>
