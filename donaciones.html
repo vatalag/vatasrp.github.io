@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Donaciones – Vata's RP</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0e1116, #161b22);
+    color: #e5e7eb;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+p {
+    max-width: 600px;
+    font-size: 15px;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+.vip-box {
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px;
+    padding: 20px 30px;
+    margin-bottom: 25px;
+}
+
+.vip-box b {
+    color: #facc15;
+}
+
+.note {
+    font-size: 14px;
+    color: #9ca3af;
+    margin-top: 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 12px 22px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.paypal {
+    background: #2563eb;
+    color: white;
+}
+
+.mercado {
+    background: #10b981;
+    color: black;
+}
+
+.back {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #94a3b8;
+    cursor: pointer;
+}
+</style>
+
+<script>
+function openExternal(url) {
+    window.location.href = url;
+}
+</script>
+</head>
+
+<body>
+<div class="container">
+
+<h1>💸 Donaciones</h1>
+
+<p>
+Las donaciones ayudan a mantener y mejorar el servidor.
+Al donar obtenés <b>VIP permanente</b> con beneficios exclusivos.
+</p>
+
+<div class="vip-box">
+<p><b>VIP Plata</b> – $4.99 USD</p>
+<p><b>VIP Oro</b> – $9.99 USD</p>
+<p><b>VIP Plus</b> – $12.99 USD</p>
+
+<p class="note">
+En la nota indicá: <br>
+VIP + SteamID + Nueva o Renovación
+</p>
+</div>
+
+<div class="buttons">
+<button class="btn paypal" onclick="openExternal('https://www.paypal.com/donate/?hosted_button_id=8NN2V6T2QKW2A')">
+PayPal
+</button>
+
+<button class="btn mercado" onclick="openExternal('https://link.mercadopago.com.ar/vatasrp')">
+MercadoPago
+</button>
+</div>
+
+<div class="back" onclick="history.back()">← Volver</div>
+
+</div>
+</body>
+</html>
