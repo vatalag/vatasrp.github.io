@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Beneficios VIP – Vata's RP</title>
+
+<style>
+  body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0e1116, #161b22);
+    color:#e5e7eb;
+  }
+
+  .wrap{
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 44px 18px;
+  }
+
+  .header{
+    text-align:center;
+    margin-bottom: 18px;
+  }
+
+  h1{
+    margin: 0 0 10px 0;
+    font-size: 34px;
+  }
+
+  .sub{
+    margin: 0 auto;
+    max-width: 720px;
+    color:#cbd5e1;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .notice{
+    margin: 18px auto 26px auto;
+    max-width: 820px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 14px 16px;
+    color:#cbd5e1;
+    font-size: 13px;
+  }
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  @media (max-width: 860px){
+    .grid{ grid-template-columns: 1fr; }
+  }
+
+  .card{
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 18px;
+    text-align: left;
+  }
+
+  .badge{
+    display:inline-block;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.3px;
+    margin-bottom: 10px;
+  }
+
+  .plata{ background: rgba(148,163,184,0.18); color:#e5e7eb; }
+  .oro{ background: rgba(250,204,21,0.16); color:#facc15; }
+  .plus{ background: rgba(253,224,71,0.20); color:#fde047; }
+
+  .price{
+    margin: 6px 0 10px 0;
+    color:#cbd5e1;
+    font-size: 13px;
+  }
+
+  .title{
+    margin: 0 0 12px 0;
+    font-size: 22px;
+  }
+
+  ul{
+    margin: 0;
+    padding-left: 18px;
+    color:#cbd5e1;
+    line-height: 1.55;
+    font-size: 14px;
+  }
+
+  li{ margin: 7px 0; }
+
+  .highlight{
+    color:#facc15;
+    font-weight: 700;
+  }
+
+  .actions{
+    display:flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 22px;
+    flex-wrap: wrap;
+  }
+
+  .btn{
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 14px;
+    transition: 0.2s;
+    text-decoration: none;
+    display:inline-block;
+  }
+
+  .btn:hover{ opacity: 0.86; }
+
+  .btn-primary{
+    background:#2563eb;
+    color:white;
+  }
+
+  .btn-secondary{
+    background: rgba(255,255,255,0.12);
+    color:#e5e7eb;
+  }
+
+  .foot{
+    text-align:center;
+    margin-top: 18px;
+    color:#94a3b8;
+    font-size: 12px;
+  }
+</style>
+
+<script>
+  function openExternal(url) {
+    if (typeof gmod !== "undefined" && (gmod.openURL || gmod.openUrl)) {
+      (gmod.openURL || gmod.openUrl)(url);
+    } else {
+      window.location.href = url;
+    }
+  }
+</script>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>⭐ Beneficios VIP</h1>
+      <p class="sub">
+        El VIP es <b>permanente</b> (pago único). Elegí el tier que mejor se adapte a tu estilo.
+        Si donaste, acordate de dejar tu <b>SteamID</b> y el tipo de VIP.
+      </p>
+    </div>
+
+    <div class="notice">
+      <b>Nota:</b> Los beneficios son “calidad de vida” (QoL) y estética/estatus.
+      Nada pay-to-win. La idea es apoyar el server sin romper el roleo ni el balance.
+    </div>
+
+    <div class="grid">
+      <!-- VIP PLATA -->
+      <div class="card">
+        <span class="badge plata">VIP PLATA</span>
+        <h2 class="title">Arrancá con ventaja QoL</h2>
+        <div class="price">USD $4.99 / ARS $8.000</div>
+        <ul>
+          <li><span class="highlight">Tag VIP</span> en chat / scoreboard</li>
+          <li><span class="highlight">Acceso a jobs VIP</span> (si aplica)</li>
+          <li><span class="highlight">Prop/Tool limits</span> un poco más altos</li>
+          <li>Cola preferencial (si hay queue)</li>
+          <li>Beneficios extra de calidad de vida</li>
+        </ul>
+      </div>
+
+      <!-- VIP ORO -->
+      <div class="card">
+        <span class="badge oro">VIP ORO</span>
+        <h2 class="title">Más opciones + más comodidad</h2>
+        <div class="price">USD $9.99 / ARS $15.600</div>
+        <ul>
+          <li><span class="highlight">Todo lo de Plata</span></li>
+          <li><span class="highlight">Más slots/limits</span> (proplimit, etc.)</li>
+          <li>Extras de personalización (si aplica)</li>
+          <li>Mejor prioridad de cola (si hay queue)</li>
+          <li>Beneficios VIP mejorados</li>
+        </ul>
+      </div>
+
+      <!-- VIP PLUS -->
+      <div class="card">
+        <span class="badge plus">VIP PLUS</span>
+        <h2 class="title">El pack completo</h2>
+        <div class="price">USD $12.99 / ARS $20.300</div>
+        <ul>
+          <li><span class="highlight">Todo lo de Oro</span></li>
+          <li><span class="highlight">Plus perks</span> (QOL + estatus)</li>
+          <li>Acceso a extras exclusivos (si aplica)</li>
+          <li>Prioridad máxima (si hay queue)</li>
+          <li>Ideal si querés apoyar fuerte el server ❤️</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="./donaciones.html">💸 Ir a Donaciones</a>
+      <a class="btn btn-secondary" href="./index.html">← Volver al Inicio</a>
+    </div>
+
+    <div class="foot">
+      ¿Dudas? Consultá a un staff en Discord. Entrega del VIP: hasta 24 hs.
+    </div>
+  </div>
+</body>
+</html>
