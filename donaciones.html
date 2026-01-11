@@ -84,7 +84,11 @@ p {
 
 <script>
 function openExternal(url) {
+  if (typeof gmod !== "undefined" && (gmod.openURL || gmod.openUrl)) {
+    (gmod.openURL || gmod.openUrl)(url);
+  } else {
     window.location.href = url;
+  }
 }
 </script>
 </head>
