@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Donaciones – Vata's RP</title>
+
 <style>
 body {
     margin: 0;
@@ -18,6 +19,7 @@ body {
     align-items: center;
     height: 100vh;
     text-align: center;
+    padding: 20px;
 }
 
 h1 {
@@ -29,7 +31,7 @@ p {
     max-width: 600px;
     font-size: 15px;
     color: #cbd5e1;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .vip-box {
@@ -39,14 +41,23 @@ p {
     margin-bottom: 25px;
 }
 
+.vip-box p {
+    margin: 6px 0;
+}
+
 .vip-box b {
     color: #facc15;
+}
+
+.vip-plus {
+    color: #fde047;
+    font-weight: bold;
 }
 
 .note {
     font-size: 14px;
     color: #9ca3af;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .buttons {
@@ -62,6 +73,11 @@ p {
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.85;
 }
 
 .paypal {
@@ -84,11 +100,11 @@ p {
 
 <script>
 function openExternal(url) {
-  if (typeof gmod !== "undefined" && (gmod.openURL || gmod.openUrl)) {
-    (gmod.openURL || gmod.openUrl)(url);
-  } else {
-    window.location.href = url;
-  }
+    if (typeof gmod !== "undefined" && (gmod.openURL || gmod.openUrl)) {
+        (gmod.openURL || gmod.openUrl)(url);
+    } else {
+        window.location.href = url;
+    }
 }
 </script>
 </head>
@@ -99,29 +115,35 @@ function openExternal(url) {
 <h1>💸 Donaciones</h1>
 
 <p>
-Las donaciones ayudan a mantener y mejorar el servidor.
+Las donaciones ayudan a mantener y mejorar el servidor.<br>
 Al donar obtenés <b>VIP permanente</b> (pago único, sin mensualidades).
 </p>
 
 <div class="vip-box">
-<p><b>VIP Plata</b> – $4.99 USD</p>
-<p><b>VIP Oro</b> – $9.99 USD</p>
-<p><b>VIP Plus</b> – $12.99 USD</p>
+    <p><b>VIP Plata</b> – $4.99 USD</p>
+    <p><b>VIP Oro</b> – $9.99 USD</p>
+    <p class="vip-plus"><b>VIP Plus</b> – $12.99 USD</p>
 
-<p class="note">
-En la nota indicá: <br>
-VIP + SteamID + Nueva o Renovación
-</p>
+    <p class="note">
+        En la nota indicá:<br>
+        VIP + SteamID + Nueva o Renovación
+    </p>
+
+    <p class="note">
+        La entrega del VIP puede demorar hasta 24 hs.
+    </p>
 </div>
 
 <div class="buttons">
-<button class="btn paypal" onclick="openExternal('https://www.paypal.com/donate/?hosted_button_id=8NN2V6T2QKW2A')">
-PayPal
-</button>
+    <button class="btn paypal"
+        onclick="openExternal('https://www.paypal.com/donate/?hosted_button_id=8NN2V6T2QKW2A')">
+        PayPal
+    </button>
 
-<button class="btn mercado" onclick="openExternal('https://link.mercadopago.com.ar/vatasrp')">
-MercadoPago
-</button>
+    <button class="btn mercado"
+        onclick="openExternal('https://link.mercadopago.com.ar/vatasrp')">
+        MercadoPago
+    </button>
 </div>
 
 <div class="back" onclick="history.back()">← Volver</div>
