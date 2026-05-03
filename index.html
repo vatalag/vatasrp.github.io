@@ -118,8 +118,19 @@
       y una experiencia justa para todos.
     </p>
 
+    <div class="quick-start">
+  <h3>🚀 Empezá así</h3>
+  <ul>
+    <li>💰 Ganá dinero → Minero o Taxista</li>
+    <li>🚗 Movete → Usá vehículos</li>
+    <li>🔫 Avanzá → Crimen, mafia o trabajos especiales</li>
+  </ul>
+  <p class="hint">👉 Abrí el menú (F4) para empezar</p>
+</div>
+
     <div class="buttons">
       <button class="btn" onclick="openLink('reglas.html')">📜 Reglas</button>
+      <button class="btn" onclick="closeMOTD()">🚀 Empezar a jugar</button>
       <button class="btn" onclick="openExternal('https://discord.gg/mGbqpJTMuX')">💬 Discord</button>
       <button class="btn" onclick="openLink('vip.html')">⭐ Beneficios VIP</button>
       <button class="btn" onclick="openLink('donaciones.html')">💸 Donaciones</button>
@@ -138,6 +149,12 @@
     function openLink(path) {
       window.location.href = path;
     }
+
+    function closeMOTD(){
+  if (typeof gmod !== "undefined" && gmod.closeHTML) {
+    gmod.closeHTML();
+  }
+}
   </script>
 </body>
 </html>
