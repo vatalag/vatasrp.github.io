@@ -41,26 +41,56 @@
       align-items:center;
       text-align:center;
       padding: 40px;
-
-      /* Subimos un poco el bloque para que se vea mejor en MOTD */
       transform: translateY(-55px);
     }
 
     h1{
       font-size: 3em;
       margin: 0 0 12px;
-      letter-spacing: 0.2px;
       text-shadow: 0 2px 12px rgba(0,0,0,0.45);
     }
 
     p{
       max-width: 720px;
-      font-size: 1.05em;            /* un toque más compacto */
+      font-size: 1.05em;
       line-height: 1.45;
       margin: 0;
-      opacity: 1;
       color: var(--muted);
-      text-shadow: 0 1px 10px rgba(0,0,0,0.35);
+    }
+
+    .quick-start{
+      margin-top: 22px;
+      padding: 18px 22px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      max-width: 420px;
+      text-align: left;
+    }
+
+    .quick-start h3{
+      margin: 0 0 10px;
+      font-size: 1.05em;
+    }
+
+    .quick-start ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .quick-start li{
+      margin: 6px 0;
+      font-size: 0.95em;
+      color: var(--muted);
+    }
+
+    .quick-start .hint{
+      margin-top: 10px;
+      font-size: 0.85em;
+      opacity: 0.75;
     }
 
     .buttons{
@@ -68,24 +98,19 @@
       display:flex;
       flex-wrap: wrap;
       justify-content:center;
-      gap: 12px;                     /* más consistente que margin:10 */
+      gap: 12px;
     }
 
     .btn{
-      appearance: none;
       border: 1px solid var(--btn-border);
       background: var(--btn-bg);
       color: var(--text);
       font-weight: 700;
-      letter-spacing: 0.2px;
-
       padding: 12px 20px;
       border-radius: var(--radius);
       cursor: pointer;
-
       box-shadow: var(--shadow-soft);
-      transition: transform .12s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
-      user-select: none;
+      transition: all .15s ease;
     }
 
     .btn:hover{
@@ -95,81 +120,42 @@
       box-shadow: var(--shadow);
     }
 
-    .btn:active{
-      transform: translateY(0px) scale(0.99);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.28);
+    /* 🔥 BOTÓN PRINCIPAL */
+    .btn-primary{
+      background: rgba(255,255,255,0.18);
+      border-color: rgba(255,255,255,0.25);
+      box-shadow: 0 0 12px rgba(255,255,255,0.15);
     }
 
-    /* Por si el MOTD queda angosto, que no se vea gigante */
     @media (max-width: 720px){
       h1{ font-size: 2.2em; }
-      p{ font-size: 0.98em; }
       .container{ transform: translateY(-35px); }
       .btn{ width: 100%; max-width: 360px; }
     }
-
-    .quick-start{
-  margin-top: 22px;
-  padding: 18px 22px;
-  border-radius: 16px;
-
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-
-  backdrop-filter: blur(8px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-
-  max-width: 420px;
-  text-align: left;
-}
-
-.quick-start h3{
-  margin: 0 0 10px;
-  font-size: 1.05em;
-}
-
-.quick-start ul{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.quick-start li{
-  margin: 6px 0;
-  font-size: 0.95em;
-  color: var(--muted);
-}
-
-.quick-start .hint{
-  margin-top: 10px;
-  font-size: 0.85em;
-  opacity: 0.75;
-}
-    
   </style>
 </head>
 
 <body>
   <div class="container">
     <h1>Bienvenido a Vata City RP</h1>
+
     <p>
-      Servidor DarkRP enfocado en rol serio, progresión, sistemas personalizados
-      y una experiencia justa para todos.
+      Servidor DarkRP con progresión, economía y múltiples caminos para crecer dentro de la ciudad.
     </p>
 
     <div class="quick-start">
-  <h3>🚀 Empezá así</h3>
-  <ul>
-    <li>💰 Ganá dinero → Minero o Taxista</li>
-    <li>🚗 Movete → Usá vehículos</li>
-    <li>🔫 Avanzá → Crimen, mafia o trabajos especiales</li>
-  </ul>
-  <p class="hint">👉 Abrí el menú (F4) para empezar</p>
-</div>
+      <h3>🚀 Empezá así</h3>
+      <ul>
+        <li>💰 Ganá dinero → Minero o Taxista</li>
+        <li>🚗 Movete → Usá vehículos</li>
+        <li>🔫 Avanzá → Crimen, mafia o trabajos especiales</li>
+      </ul>
+      <p class="hint">👉 Presioná F4 para empezar</p>
+    </div>
 
     <div class="buttons">
+      <button class="btn btn-primary" onclick="closeMOTD()">🚀 Empezar a jugar</button>
       <button class="btn" onclick="openLink('reglas.html')">📜 Reglas</button>
-      <button class="btn" onclick="closeMOTD()">🚀 Empezar a jugar</button>
       <button class="btn" onclick="openExternal('https://discord.gg/mGbqpJTMuX')">💬 Discord</button>
       <button class="btn" onclick="openLink('vip.html')">⭐ Beneficios VIP</button>
       <button class="btn" onclick="openLink('donaciones.html')">💸 Donaciones</button>
@@ -181,7 +167,7 @@
       if (typeof gmod !== "undefined" && (gmod.openURL || gmod.openUrl)) {
         (gmod.openURL || gmod.openUrl)(url);
       } else {
-        window.location.href = url; // fallback
+        window.location.href = url;
       }
     }
 
@@ -190,10 +176,10 @@
     }
 
     function closeMOTD(){
-  if (typeof gmod !== "undefined" && gmod.closeHTML) {
-    gmod.closeHTML();
-  }
-}
+      if (typeof gmod !== "undefined" && gmod.closeHTML) {
+        gmod.closeHTML();
+      }
+    }
   </script>
 </body>
 </html>
